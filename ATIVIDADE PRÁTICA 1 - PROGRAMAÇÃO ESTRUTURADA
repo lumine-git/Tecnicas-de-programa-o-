@@ -1,0 +1,165 @@
+import java.util.Scanner;
+
+public class Exercicios {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // -------------------------------
+        // 1. Número positivo ou negativo
+        // -------------------------------
+        System.out.print("Digite um número: ");
+        double numero = sc.nextDouble();
+        if (numero > 0) {
+            System.out.println("Número positivo");
+        } else {
+            System.out.println("Número negativo");
+        }
+        System.out.println("\n--------------------------------\n");
+
+        // ------------------------------------------
+        // 2. Comparar dois números inteiros
+        // ------------------------------------------
+        System.out.print("Digite o primeiro número inteiro: ");
+        int n1 = sc.nextInt();
+        System.out.print("Digite o segundo número inteiro: ");
+        int n2 = sc.nextInt();
+
+        if (n1 == n2) {
+            System.out.println("Os números são iguais.");
+        } else if (n1 > n2) {
+            System.out.println("O primeiro número é maior.");
+        } else {
+            System.out.println("O segundo número é maior.");
+        }
+        System.out.println("\n--------------------------------\n");
+
+        // ------------------------------------------
+        // 3. Menu para calcular áreas
+        // ------------------------------------------
+        System.out.println("Menu:");
+        System.out.println("1. Calcular área do quadrado");
+        System.out.println("2. Calcular área do círculo");
+        System.out.print("Escolha uma opção (1 ou 2): ");
+        int opcao = sc.nextInt();
+
+        if (opcao == 1) {
+            System.out.print("Digite o lado do quadrado: ");
+            double lado = sc.nextDouble();
+            double area = lado * lado;
+            System.out.println("A área do quadrado é " + area);
+        } else if (opcao == 2) {
+            System.out.print("Digite o raio do círculo: ");
+            double raio = sc.nextDouble();
+            double area = Math.PI * raio * raio;
+            System.out.println("A área do círculo é " + area);
+        } else {
+            System.out.println("Opção inválida!");
+        }
+        System.out.println("\n--------------------------------\n");
+
+        // ------------------------------------------
+        // 4. Tabuada
+        // ------------------------------------------
+        System.out.print("Digite um número para ver sua tabuada: ");
+        int numTabuada = sc.nextInt();
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(numTabuada + " x " + i + " = " + (numTabuada * i));
+        }
+        System.out.println("\n--------------------------------\n");
+
+        // ------------------------------------------
+        // 5. Par ou ímpar
+        // ------------------------------------------
+        System.out.print("Digite um número inteiro: ");
+        int numParImpar = sc.nextInt();
+        if (numParImpar % 2 == 0) {
+            System.out.println("Número par");
+        } else {
+            System.out.println("Número ímpar");
+        }
+        System.out.println("\n--------------------------------\n");
+
+        // ------------------------------------------
+        // 6. Fatorial
+        // ------------------------------------------
+        System.out.print("Digite um número para calcular o fatorial: ");
+        int numFatorial = sc.nextInt();
+        long fatorial = 1;
+        for (int i = 1; i <= numFatorial; i++) {
+            fatorial *= i;
+        }
+        System.out.println("O fatorial de " + numFatorial + " é " + fatorial);
+        System.out.println("\n--------------------------------\n");
+
+        // ------------------------------------------
+        // 7. Faixa Etária
+        // ------------------------------------------
+        System.out.print("Digite sua idade: ");
+        int idade = sc.nextInt();
+        if (idade < 18) {
+            System.out.println("Menor de idade");
+        } else if (idade < 60) {
+            System.out.println("Adulto(a)");
+        } else {
+            System.out.println("Idoso(a)");
+        }
+        System.out.println("\n--------------------------------\n");
+
+        // ------------------------------------------
+        // 8. Soma dos primeiros n números ímpares
+        // ------------------------------------------
+        System.out.print("Digite um número inteiro n: ");
+        int n = sc.nextInt();
+        int soma = 0;
+        int impar = 1;
+        for (int i = 0; i < n; i++) {
+            soma += impar;
+            impar += 2;
+        }
+        System.out.println("A soma dos primeiros " + n + " números ímpares é " + soma);
+        System.out.println("\n--------------------------------\n");
+
+        // ------------------------------------------
+        // 9. Lista de nomes
+        // ------------------------------------------
+        String[] nomes = new String[5];
+        sc.nextLine(); // consumir quebra de linha
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Digite o " + (i + 1) + "º nome: ");
+            nomes[i] = sc.nextLine();
+        }
+        System.out.print("Digite mais um nome para buscar na lista: ");
+        String nomeExtra = sc.nextLine();
+
+        boolean encontrado = false;
+        for (String nome : nomes) {
+            if (nome.equalsIgnoreCase(nomeExtra)) {
+                encontrado = true;
+                break;
+            }
+        }
+        if (encontrado) {
+            System.out.println("O nome está na lista!");
+        } else {
+            System.out.println("O nome NÃO está na lista.");
+        }
+        System.out.println("\n--------------------------------\n");
+
+        // ------------------------------------------
+        // 10. Senha secreta
+        // ------------------------------------------
+        final String senhaCorreta = "Java123";
+        while (true) {
+            System.out.print("Digite a senha: ");
+            String senha = sc.nextLine();
+            if (senha.equals(senhaCorreta)) {
+                System.out.println("Senha correta! Acesso liberado.");
+                break;
+            } else {
+                System.out.println("Senha incorreta, tente novamente.");
+            }
+        }
+
+        sc.close();
+    }
+}
