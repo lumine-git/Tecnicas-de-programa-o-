@@ -1,0 +1,60 @@
+# ================================================================
+# Arquivo de Configuração da Aplicação
+# Copie este arquivo como 'app.properties' na raiz do projeto
+# ou em src/main/resources/
+# ================================================================
+
+# ================================================================
+# CONFIGURAÇÕES DO BANCO DE DADOS
+# ================================================================
+
+# URL de conexão PostgreSQL
+# Padrão: jdbc:postgresql://[host]:[port]/[database]
+db.url=jdbc:postgresql://localhost:5432/fornecedores
+
+# Usuário do PostgreSQL
+db.user=postgres
+
+# Senha do usuário PostgreSQL
+# IMPORTANTE: Não commit senhas em repositórios públicos!
+db.password=postgres
+
+# Timeout de conexão (em segundos)
+db.timeout=30
+
+# ================================================================
+# CONFIGURAÇÕES DA API
+# ================================================================
+
+# URL base da BrasilAPI
+api.base.url=https://brasilapi.com.br/api/cnpj/v1/
+
+# Timeout da requisição HTTP (em segundos)
+api.timeout=10
+
+# ================================================================
+# CONFIGURAÇÕES DA APLICAÇÃO
+# ================================================================
+
+# Nome da aplicação
+app.name=Cadastro de Fornecedores Automático
+
+# Versão
+app.version=1.0
+
+# Modo debug (true/false)
+app.debug=false
+
+# ================================================================
+# NOTA DE SEGURANÇA
+# ================================================================
+
+# NUNCA faça commit de senhas em repositórios públicos!
+# Use variáveis de ambiente ou ferramentas como:
+# - Spring Cloud Config
+# - Vault
+# - Environment Variables
+# - Docker Secrets
+
+# Exemplo com variável de ambiente:
+# db.password=${DB_PASSWORD:postgres}
